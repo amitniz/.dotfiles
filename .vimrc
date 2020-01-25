@@ -14,10 +14,15 @@ Plugin 'vim-scripts/L9'
 Plugin 'tpope/vim-fugitive'
 Plugin 'rstacruz/sparkup', {'rtp':'vim/'}
 Plugin 'scrooloose/nerdtree'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'prettier/vim-prettier', {'do': 'yarn install'}
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'kien/ctrlp.vim'
 "Themes:
 Plugin 'vim-scripts/darktango.vim'
 Plugin 'jonathanfilip/vim-lucius'
@@ -36,7 +41,7 @@ syntax enable
 set background=dark
 set ruler
 set hidden
-set number
+set rnu
 set laststatus=2
 set smartindent
 set st=4 sw=4 et
@@ -68,7 +73,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_mri_args = "--config=$HOME/.jshintrc"
-let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'python']
+let g:syntastic_python_checkers = [ 'pylint', 'flake8', 'python3']
 let g:syntastic_yaml_checkers = ['jsyaml']
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_python_flake8_config_file='.flake8'
@@ -94,7 +99,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 " ==== Easymotion
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
-nmap f <Plug>(easymotion-s)
+"nmap f <Plug>(easymotion-s)
 
 " ==== moving around
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -116,5 +121,5 @@ let g:pymode_indent = 0
 command JsonPretty execute ":%!python -m json.tool"
 set secure
 
-"ESC mapping
+" ==== ESC mapping
 inoremap jj <ESC> 
