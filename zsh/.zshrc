@@ -4,7 +4,7 @@ export TERM="xterm-256color"
 export PATH=/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/Amit/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,7 +112,7 @@ alias atam='docker run -it -v $(pwd):/home atam'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/Amit/.sdkman"
-[[ -s "/Users/Amit/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Amit/.sdkman/bin/sdkman-init.sh"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 neofetch
 alias c='clear;neofetch'
 alias ghidra='/Applications/ghidra_9.1.1_PUBLIC/.ghidraRun'
