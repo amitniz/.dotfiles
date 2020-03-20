@@ -9,6 +9,7 @@ call vundle#begin()
 
 
 source /Users/Amit/.vim/vpm/sources.vim
+Plugin 'vim-beautify'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/L9'
 Plugin 'tpope/vim-fugitive'
@@ -23,6 +24,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'prettier/vim-prettier', {'do': 'yarn install'}
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'kien/ctrlp.vim'
+Plugin 'lervag/vimtex'
 "Themes:
 Plugin 'vim-scripts/darktango.vim'
 Plugin 'jonathanfilip/vim-lucius'
