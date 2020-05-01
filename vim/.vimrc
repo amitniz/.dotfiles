@@ -39,6 +39,7 @@ set ruler
 set hidden
 set rnu
 set laststatus=2
+set autoindent
 set smartindent
 set colorcolumn=80
 set shiftwidth=4
@@ -51,7 +52,6 @@ let NERDTreeShowHidden=1
 let g:NERDTreeWinPos="left"
 let g:NERDTreeDirArrows=0
 map <C-t> :NERDTreeToggle<CR>
-
 
 " === flake8
 let g:flake8_show_in_file=1
@@ -88,3 +88,8 @@ set shortmess+=A
 inoremap jj <ESC>
 inoremap JJ <ESC>
 
+" ==== Cntl-C
+noremap <C-c> :qa<CR>
+
+" ==== Compile
+noremap <C-/> :!make<CR>
