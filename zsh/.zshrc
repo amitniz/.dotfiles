@@ -1,10 +1,37 @@
+#wal colorscheme#wal colorscheme#wal colorscheme
+(cat ~/.cache/wal/sequences &)
+
+#lunch pdf 
+function pd {
+	zathura $@ & disown
+	exit
+}
+
+# save path on cd
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+	clear
+}
+
+# change last dir to home on exit
+function exit {
+	echo ~ > ~/.last_dir
+	builtin exit
+}
+
+# restore last saved path
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi
+
 export TERM="xterm-256color"
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="~/.oh-my-zsh"
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +97,7 @@ DISABLE_AUTO_TITLE="false"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git node npm title python zsh-autosuggestions)
+plugins=(git node npm python zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 source ~/.fonts/*.sh
 # User configuration
@@ -103,7 +130,6 @@ source ~/.fonts/*.sh
 
 PROMPT_TITLE="Don't let schooling interfere with your education."
 #####Atam Docker alias############
-alias atam='docker run -it -v $(pwd):/home atam'
 
 ###################PowerLevel9k Configurations##################
 #POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -111,9 +137,17 @@ alias atam='docker run -it -v $(pwd):/home atam'
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/Amit/.sdkman"
+export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 neofetch
+####################################ALIASES###########################
 alias c='clear;neofetch'
-alias ghidra='/Applications/ghidra_9.1.1_PUBLIC/.ghidraRun'
-alias gdb=/opt/gcc-8.1.0/bin/gdb
+alias atam='docker run -it -v $(pwd):/home atam'
+alias update='sudo pacman -Syyu'
+alias pac='sudo pacman -S'
+alias com='cd ~/Dropbox/computerEngineering'
+alias gt='cd ~/github'
+alias md='mkdir -p'
+alias dic='sdcv'
+unalias l
+
