@@ -21,7 +21,7 @@ window:
   #titlebar
   decorations: none
 
-background_opacity: 0.7
+background_opacity: 0.6
   
 scrolling:
   history: 10000
@@ -31,22 +31,22 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: monospace
+    family: Source Code Pro
     style: Regular
 
   # Bold font face
   bold:
-    family: monospace
+    family: Source Code Pro
     style: Bold
 
   # Italic font face
   italic:
-    family: monospace
+    family: Source Code Pro
     style: Italic
 
   # Bold italic font face
   bold_italic:
-    family: monospace
+    family: Source Code Pro
 
   # Point size
   size: 11.0
