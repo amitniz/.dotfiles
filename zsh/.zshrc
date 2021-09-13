@@ -1,17 +1,15 @@
 #wal colorscheme (Linux)
-[[ $(uname) == Linux ]] && (cat ~/.cache/wal/sequences &)
+#[[ $(uname) == Linux ]] && (cat ~/.cache/wal/sequences &)
 
 #Zsh Theme
-ZSH_THEME="nebirhos"  #"powerlevel9k/powerlevel9k"
-
-PROMPT_TITLE="Don't let schooling interfere with your education."
-
-DISABLE_AUTO_TITLE="false"
+ZSH_THEME="bira"
 
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+export NO_AT_BRIDGE=1
 export TERM="xterm-256color"
-export PATH=/usr/local/sbin:$PATH
+export PATH=/var/lib/snapd/snap/bin/:$PATH
+export PATH=$PATH:~/.local/bin/
 export ZSH=~/.oh-my-zsh
 export UPDATE_ZSH_DAYS=7
 export LANG=en_US.UTF-8
@@ -19,7 +17,7 @@ export LANG=en_US.UTF-8
 
 plugins=(git node npm python zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
-source ~/.fonts/*.sh
+#source ~/.fonts/*.sh
 
 #-------------------------Aliases------------------------#
 alias c='clear;neofetch'
@@ -30,10 +28,25 @@ alias com='cd ~/Dropbox/computerEngineering'
 alias gt='cd ~/github'
 alias md='mkdir -p'
 alias dic='sdcv'
+alias tt='tmux a -t 0 || tmux'
 unalias l
 
 
 #-----------------------Functions----------------------#
+
+
+function kali {
+	if [[ -z "$1" ]];then
+		sudo docker run --rm -w /mnt -v $(pwd):/mnt -it kali_headless zsh
+	else
+		sudo docker run --rm -w /mnt -v $(pwd):/mnt -it kali_headless $*
+	fi
+}
+
+#open vscode and close the terminal
+function vs {
+	code $@ && exit
+	}
 
 # load vim with workspace
 function vim {
